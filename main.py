@@ -2,7 +2,7 @@
 import asyncio
 import structlog
 import json
-from data.config import TRANSACTIONS_FILE, REFUND_USER
+from data.config import TRANSACTIONS_FILE, REFUND_USER, SUPPORT
 from typing import Callable, Dict, Any, Awaitable
 from aiogram import F, Router, Bot, Dispatcher, BaseMiddleware
 from aiogram.exceptions import TelegramBadRequest
@@ -134,7 +134,7 @@ async def go_back_to_start(callback: CallbackQuery):
 async def cmd_refund(message: Message, bot: Bot, command: CommandObject):
     if message.from_user.id != REFUND_USER:
         await message.answer(
-            "Чтобы вернуть деньги - напишите нашему менеджеру: @NG_MNG"
+            f"Чтобы вернуть деньги - напишите нашему менеджеру: @{SUPPORT}"
         )
         return
 
