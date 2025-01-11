@@ -38,7 +38,7 @@ pip install -r requirements.txt
 2. Запустите бота:
 
 ```bash
-python bot.py
+python main.py
 ```
 
 Бот начнёт работать и будет принимать донаты через Telegram.
